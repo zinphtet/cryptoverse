@@ -1,0 +1,36 @@
+@import '../../base';
+.side_bar{
+    color: var(--white);
+    @include flexCol(3rem);
+    .brand{
+        @include flexRow(1rem);
+        .logo_name{
+            font-size: 3rem;
+        }
+        img{
+            width: 4rem;
+            height: 4rem;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+    .hamber_menu{
+        display: none;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        li{
+            cursor: pointer;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+            gap: 1rem;
+            span{
+                font-size: 2rem;
+            }
+        }
+    }
+}

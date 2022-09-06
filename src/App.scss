@@ -1,0 +1,63 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // outline: 1px solid gold;
+}
+html{
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style-type: none;
+}
+:root{
+  --white : #fff
+}
+
+
+@media screen and (max-width:56.25rem){
+  html{
+    font-size: 59.375%;
+  }
+  .logo_name{
+    color: rgb(244, 6, 201);
+}
+}
+@media screen and (max-width:37.5rem){
+  html{
+    font-size: 56.25%;
+  }
+  .logo_name{
+    color: green;
+}
+}
+@media screen and (max-width:25rem){
+  html{
+    font-size: 53.125%;
+  }
+  .logo_name{
+    color: blue;
+}
+}
+
+.myapp{
+
+  display: flex;
+  
+}
+.side_bar_wrapper{
+  flex-basis: 20rem;
+ background-color: #f57f17;
+ height: 100vh;
+ padding: 1.5rem 2.5rem;
+}
+.main_content_wrapper{
+  flex: 1;
+  padding: 1.5rem 2.5rem;
+  min-height: 100vh;
+}

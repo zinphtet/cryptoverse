@@ -1,0 +1,12 @@
+
+@mixin flexCol ($gap){
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+@mixin flexRow ($gap){
+    display: flex;
+    align-items: center;
+    gap: $gap;
+}
+
