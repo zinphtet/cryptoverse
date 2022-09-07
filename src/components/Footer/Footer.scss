@@ -1,0 +1,13 @@
+
+.footer{
+    background-color: var(--main-bg);
+    font-size: 1.75rem;
+    padding: 1rem;
+    text-align: center;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    color: var(--white);
+    &_title{
+      margin-bottom: .5rem;
+    }
+}

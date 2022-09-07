@@ -1,0 +1,39 @@
+@import '../../base';
+.news_item{
+    cursor: pointer;
+    background-color: var(--white);
+    padding: 2rem;
+    @include flexCol(2rem);
+    &:hover{
+        @include boxShadow;
+    }
+    .news_title{
+        @include flex;
+        gap: 1rem;
+        .title{
+         font-size: 1.75rem;
+         font-weight: bold;
+        }
+        img{
+            width: 6rem;
+            height: 6rem;
+            object-fit: cover;
+            border-radius: .5rem;
+        }
+    }
+    .news_info{
+        font-size: 1.35rem;
+    }
+    .news_channel{
+        @include flex;
+        font-size: 1.2rem;
+        .channel_logo{
+            @include flexRow(.5rem);
+            img{
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -2,8 +2,10 @@
 .side_bar{
     color: var(--white);
     @include flexCol(3rem);
+    // position: fixed;
     .brand{
         @include flexRow(1rem);
+        padding: .5rem 1rem;
         .logo_name{
             font-size: 3rem;
         }
@@ -22,6 +24,7 @@
         flex-direction: column;
         gap: 2rem;
         li{
+            padding: .5rem 1rem;
             cursor: pointer;
             font-size: 2.5rem;
             display: flex;
@@ -29,8 +32,48 @@
             // justify-content: center;
             gap: 1rem;
             span{
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
         }
     }
-}
+    .active_link{
+        color: var(--black);
+        background-color: var(--white);
+        transition: all .2s;
+        border-radius: .5rem;
+    }
+    .not_active{
+        color: var(--white);
+    }
+
+   
+  }
+
+  @media screen and (max-width:56.25rem){
+    .side_bar{
+
+         display: flex;
+         align-items: center;
+         flex-direction: row;
+         justify-content: space-between;
+        .hamber_menu{
+            display: block;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+        .nav{
+            position: absolute;
+            // display: none;
+            top: 6rem;
+            right: -100%;
+            background-color: var(--main-bg);
+            padding: 2rem;
+           transition: all .5s;
+        }
+        .showNav{
+            right: 0%;
+        }
+
+    }
+   
+  }

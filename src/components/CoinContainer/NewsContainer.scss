@@ -1,0 +1,10 @@
+
+.coin_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(25rem,1fr));
+    grid-gap: 1.5rem;
+    justify-content: space-between;
+    width: 100%;
+    // border: 1px solid red;
+    padding: 2rem 0;
+}

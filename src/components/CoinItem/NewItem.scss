@@ -1,0 +1,27 @@
+@import '../../base';
+.new_item{
+    
+    cursor: pointer;
+    @include flexCol(2rem);
+    padding: 2rem;
+    background-color:#fff;
+    
+    &:hover{
+       @include boxShadow;
+    }
+    .coin{
+        @include flex;
+        font-size: 1.75rem;
+        font-weight: bold;
+        img{
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    .coin_stats{
+        @include flexCol(1rem);
+        .stat_item{
+               font-size: 1.25rem;
+        }
+    }
+}

@@ -1,3 +1,5 @@
+ 
+ @import './base';
 
 *{
   margin: 0;
@@ -8,6 +10,8 @@
 html{
   font-size: 62.5%;
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  background-color: aliceblue;
 }
 a{
   text-decoration: none;
@@ -15,10 +19,26 @@ a{
 li{
   list-style-type: none;
 }
+::-webkit-scrollbar{
+  width: 0;
+}
 :root{
-  --white : #fff
+  --white : #fff;
+  --black : rgb(0, 0, 0);
+  --main-bg :#f57f17; 
+  --link:#3131ee;
 }
 
+.title_div{
+    @include flex;
+   .title{
+     font-size: 2.5rem;
+   }
+   .link{
+      font-size: 2rem;
+      color: var(--link);
+   }
+}
 
 @media screen and (max-width:56.25rem){
   html{
@@ -48,16 +68,32 @@ li{
 .myapp{
 
   display: flex;
+  @media screen and (max-width:56.25rem){
+    @include flexCol(2rem)
+   }
   
 }
 .side_bar_wrapper{
-  flex-basis: 20rem;
- background-color: #f57f17;
+  position: sticky;
+  flex-basis: 25rem;
+ background-color: var(--main-bg);
  height: 100vh;
- padding: 1.5rem 2.5rem;
+ padding: 1.5rem 2rem;
+ @media screen and (max-width:56.25rem){
+  display: block;
+  flex-basis: 5rem;
+  padding: 1rem;
+ }
 }
 .main_content_wrapper{
   flex: 1;
-  padding: 1.5rem 2.5rem;
-  min-height: 100vh;
+  padding: 2rem 2rem 0rem 2rem;
+  max-height: 100vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar{
+    width: 0;
+  }
+  @media screen and (max-width:56.25rem){
+     padding-block: 0rem;
+  }
 }

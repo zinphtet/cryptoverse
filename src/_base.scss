@@ -9,4 +9,16 @@
     align-items: center;
     gap: $gap;
 }
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+@mixin boxShadow(){
+    -webkit-box-shadow: 4px 5px 4px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 5px 4px -2px rgba(0,0,0,0.75);
+    box-shadow: 4px 5px 4px -2px rgba(0,0,0,0.75);
+    //  margin-top: -2px;
+             transition: all .3s;
+}
