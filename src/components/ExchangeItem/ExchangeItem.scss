@@ -1,0 +1,41 @@
+@import '../../base';
+.exchange_item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    background-color: var(--white);
+    padding: .75rem ;
+    &>*{
+        flex: 1;
+    }
+    .exchange{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+        &_name{
+            font-weight: 500;
+            // color: var(--main-bg);
+            font-size: 1.5rem;
+            @media screen and (max-width:37.5rem){
+                display: none;
+            }
+        }
+    }
+}
+
+.exchange_item_info{
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    border-top: .15rem solid #dcd5d5;
+    font-size: 1.15rem;
+    span{
+        color: var(--link);
+    }
+}
+

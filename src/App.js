@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Exchange from './components/Exchange/Exchange';
 import News from './components/News/News';
 import Footer from './components/Footer/Footer';
+import Crypto from './components/Crypto/Crypto';
 import { Link, Routes, Route } from 'react-router-dom';
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/currencies" element={<Currencies />} />
 					<Route path="/exchange" element={<Exchange />} />
 					<Route path="/news" element={<News />} />
+					<Route path="/crypto/:id" element={<Crypto />} />
 				</Routes>
 				<Footer />
 			</div>

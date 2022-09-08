@@ -1,0 +1,12 @@
+@import '../../base';
+.exchange_container{
+    @include flexCol(.5rem);
+    padding-block: 1rem;
+    .exchanges{
+        display: flex;
+        &>p{
+            flex: 1;
+            font-size: 1.5rem;
+        }
+    }
+}

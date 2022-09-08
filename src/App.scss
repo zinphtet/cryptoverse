@@ -1,4 +1,7 @@
  
+
+// @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap');
+
  @import './base';
 
 *{
@@ -9,7 +12,8 @@
 }
 html{
   font-size: 62.5%;
-  font-family: 'Montserrat', sans-serif;
+  // font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   overflow-x: hidden;
   background-color: aliceblue;
 }
@@ -95,5 +99,57 @@ li{
   }
   @media screen and (max-width:56.25rem){
      padding-block: 0rem;
+  }
+}
+
+.mytitle{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--main-bg);
+  margin: 1.5rem 0;
+}
+.sec_title{
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+.myoverview{
+  font-size: 1.25rem;
+}
+.statss{
+  // border: 1px solid red;
+  margin-block: 2rem;
+  padding: 1rem;
+  &_item{
+    font-size: 1.25rem;
+    border-bottom:.2rem solid #ded2d2;
+    padding: 1.25rem;
+    @include flex();
+     div{
+      @include flexRow(1rem);
+      svg{
+        font-size:2rem;
+      }
+     }
+     .value{
+      font-weight: bold;
+     }
+  }
+}
+
+.para{
+  font-size: 1.25rem;
+  text-align: justify;
+}
+.links{
+  .link{
+    @include flex();
+    font-size: 1.25rem;
+    padding: 1rem;
+    border-bottom: .2rem solid #ded2d2;
+    .add{
+      color: var(--link);
+      cursor: pointer;
+    }
   }
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import './NewItem.scss'
 import bitcoin from '../../bitcoin.png'
+import {useNavigate} from 'react-router-dom'
 const CoinItem = () => {
+  const router = useNavigate()
   return (
-    <div className="new_item">
+    <div className="new_item" onClick={()=>router(`/crypto/id`)}>
          <div className="coin">
             <p className="coin_name">
                 1 . Bitcoin

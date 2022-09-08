@@ -1,0 +1,48 @@
+@import '../../base';
+.crypto{
+    padding-bottom: 2rem;
+    .title{
+        margin-top: 1rem;
+        font-size: 2.15rem;
+        font-weight: bold;
+        color: var(--main-bg);
+        text-align: center;
+    }
+    .title_info{
+         font-size: 1.25rem;
+         margin-top: 2rem;
+         text-align: center;
+    }
+    .chart{
+        // border: 1px solid red;
+        padding-block: 5rem;
+        .chart_select{
+            width: 15rem;
+            padding: .5rem .75rem;
+            outline: none;
+            cursor: pointer;
+        }
+        &_info{
+             @include flex();
+             .mytitle{
+                font-weight: normal;
+                padding-bottom: 1rem
+             }
+             div{
+                @include flexRow(1rem);
+                font-size:1.25rem;
+                font-weight: bold;
+             }
+        }
+    }
+    .stat_info , .history{
+       display: grid;
+       grid-template-columns: repeat(auto-fill , minmax(35rem , 1fr));
+       gap: 2rem;
+        &>*{
+            flex: 1;
+            // border:1px solid red;
+        }
+    }
+    
+}

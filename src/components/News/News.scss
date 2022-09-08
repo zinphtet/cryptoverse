@@ -1,0 +1,16 @@
+.news{
+    #select{
+        margin-top: 1rem;
+        padding: .5rem .75rem;
+        width: 15rem;
+        outline: none;
+        border: .2rem solid hwb(0 36% 62%);
+        border-radius: .5rem;
+        &:hover{
+            // outline: 1px solid var(--main-bg);
+            outline: none;
+            border: .2rem solid var(--main-bg);
+        }
+        }
+    
+}
