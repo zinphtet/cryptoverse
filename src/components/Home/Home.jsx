@@ -1,11 +1,29 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import './Home.scss'
 import millify from "millify";
-import { Link } from 'react-router-dom';
 import CoinContainer from '../CoinContainer/CoinContainer';
 import NewsContainer from '../NewsContainer/NewsContainer';
 import Title from '../Title/Title';
+import { useSelector , useDispatch } from 'react-redux';
+import { fetchAllCoins } from '../../Redux/allcoins';
+import Loading from '../Loading/Loading';
+
 const Home = () => {
+ 
+   const dispatch = useDispatch()
+   const {allcoins , loading , error} = useSelector(state=>state.allcoins)
+   useEffect(()=>{
+       dispatch(fetchAllCoins())
+   },[])
+
+//LOADING 
+ if(loading) return <Loading/>
+
+
+  const {totalCoins, totalExchanges ,totalMarkets , totalMarketCap,total24hVolume}  = allcoins?.data?.stats
+  const slicedCoins = allcoins.data.coins.slice(0,10)
+
+
   return (
     <div className="home">
        <p className="home_title">
@@ -19,7 +37,7 @@ const Home = () => {
              </p>
              <p className="stat_number">
              {
-                millify(212225)
+                millify(Number(totalCoins))
               }
              </p>
           </div>
@@ -29,7 +47,7 @@ const Home = () => {
              </p>
              <p className="stat_number">
              {
-                millify(212225)
+                millify(Number(totalExchanges))
               }
              </p>
           </div>
@@ -37,21 +55,21 @@ const Home = () => {
        <div className="stats">
           <div className="stat">
              <p className="stat_title">
-                Total Currencies
+                Total Market Cap
              </p>
              <p className="stat_number">
-              {
-                millify(212225)
+             $ {
+                millify(Number(totalMarketCap))
               }
              </p>
           </div>
           <div className="stat">
              <p className="stat_title">
-                Total Exchange
+                Total 24h Volume
              </p>
              <p className="stat_number">
-             {
-                millify(212225)
+            $ {
+                millify(Number(total24hVolume))
               }
              </p>
           </div>
@@ -59,29 +77,21 @@ const Home = () => {
        <div className="stats">
           <div className="stat">
              <p className="stat_title">
-                Total Currencies
+                Total Market
              </p>
              <p className="stat_number">
              {
-                millify(212225)
+                millify(Number(totalMarkets))
               }
              </p>
           </div>
           <div className="stat">
-             <p className="stat_title">
-                Total Exchange
-             </p>
-             <p className="stat_number">
-             {
-                millify(212225)
-              }
-             </p>
           </div>
        </div>
        </div>
        <div className="home_crypto">
            <Title title='Top 10 Crypto in the World' path='currencies'  />
-           <CoinContainer/>
+           <CoinContainer data={slicedCoins}/>
          
        </div>
        <div className="home_news">

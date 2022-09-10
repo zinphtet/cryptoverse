@@ -2,25 +2,27 @@ import React from 'react'
 import './NewItem.scss'
 import bitcoin from '../../bitcoin.png'
 import {useNavigate} from 'react-router-dom'
-const CoinItem = () => {
+import millify from 'millify'
+const CoinItem = ({iconUrl , change ,  name , marketCap , price , rank ,uuid}) => {
+  
   const router = useNavigate()
   return (
-    <div className="new_item" onClick={()=>router(`/crypto/id`)}>
+    <div className="new_item" onClick={()=>router(`/crypto/${uuid}`)}>
          <div className="coin">
             <p className="coin_name">
-                1 . Bitcoin
+               {rank} . {name}
             </p>
-            <img src={bitcoin} alt="crypto img" />
+            <img src={iconUrl} alt="crypto img" />
          </div>
          <div className="coin_stats">
             <p className="stat_item">
-                Price : 12 k
+                Price :$ {millify(Number(price))}
             </p>
             <p className="stat_item">
-                Market Cap : 12.2k
+                Market Cap :$ {millify(Number(marketCap))}
             </p>
             <p className="stat_item">
-               Daily Change : 12.5%
+               Daily Change : {change} %
             </p>
          </div>
     </div>

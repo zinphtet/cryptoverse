@@ -1,21 +1,32 @@
 @import '../../base';
 .crypto{
-    padding-bottom: 2rem;
-    .title{
-        margin-top: 1rem;
-        font-size: 2.15rem;
-        font-weight: bold;
-        color: var(--main-bg);
-        text-align: center;
+    padding-bottom: 4rem;
+    .icon_title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        img{
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+        }
+        .title{
+            font-size: 2.15rem;
+            font-weight: bold;
+            color: var(--main-bg);
+            // text-align: center;
+        }
+
     }
+    
     .title_info{
          font-size: 1.25rem;
          margin-top: 2rem;
          text-align: center;
     }
     .chart{
-        // border: 1px solid red;
-        padding-block: 5rem;
+        padding-block: 2rem;
         .chart_select{
             width: 15rem;
             padding: .5rem .75rem;
@@ -24,10 +35,7 @@
         }
         &_info{
              @include flex();
-             .mytitle{
-                font-weight: normal;
-                padding-bottom: 1rem
-             }
+
              div{
                 @include flexRow(1rem);
                 font-size:1.25rem;
@@ -42,6 +50,16 @@
         &>*{
             flex: 1;
             // border:1px solid red;
+        }
+    }
+    .history{
+        &_coin{
+            font-size: 1.25rem;
+            padding-top: 2rem;
+            h3,h2,h1,h4,h5,h6{
+                margin: 1rem 0;
+                color: var(--main-bg);
+            }
         }
     }
     

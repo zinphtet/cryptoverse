@@ -1,7 +1,7 @@
 
 import React ,{useState}from 'react'
 import './Sidebar.scss'
-import logo from '../../logo.png'
+import logo from '../../logo.jpg'
 import {AiOutlineMenu,AiOutlineClose , AiOutlineHome} from 'react-icons/ai'
 import {RiCurrencyLine}  from 'react-icons/ri'
 import {FaExchangeAlt} from 'react-icons/fa'

@@ -21,7 +21,7 @@ function App() {
 					<Route path="/news" element={<News />} />
 					<Route path="/crypto/:id" element={<Crypto />} />
 				</Routes>
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		</div>
 	);
