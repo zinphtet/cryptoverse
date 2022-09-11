@@ -6,7 +6,7 @@ import Exchange from './components/Exchange/Exchange';
 import News from './components/News/News';
 import Footer from './components/Footer/Footer';
 import Crypto from './components/Crypto/Crypto';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 function App() {
 	return (
 		<div className="myapp">

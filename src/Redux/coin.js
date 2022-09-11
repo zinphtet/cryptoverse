@@ -8,7 +8,7 @@ const initialState = {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'a3096eba63msh69ff0621ee3695ap1075b2jsn5a8e7127f0f3',
+		'X-RapidAPI-Key': process.env.REACT_APP_RAPID_KEY,
 		'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
 	},
 };
