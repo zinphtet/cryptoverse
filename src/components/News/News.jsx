@@ -1,18 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './News.scss'
 import NewsContainer from '../NewsContainer/NewsContainer'
 const News = () => {
+  useEffect(()=>{
+       document.title = 'News for Cryptocurrencies'
+  },[])
   return (
     <div className="news">
-      <form >
-        <select name="select" id="select">
-            <option value="bitcoin">Bitcoin</option>
-            <option value="etherum">Etherum</option>
-            <option value="bitcoin">Bitcoin</option>
-            <option value="bitcoin">Bitcoin</option>
-        </select>
-      </form>
-           <NewsContainer/>
+
+           <NewsContainer main={true} />
     </div>
   )
 }

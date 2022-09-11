@@ -52,7 +52,7 @@ const options = {
             data:dataPrice,
             // borderColor : 'blue',
             borderWidth:2,
-            backgroundColor : '#f57f17'
+            backgroundColor : '#00b0ff'
         }
     ]
 }

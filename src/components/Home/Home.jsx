@@ -8,12 +8,14 @@ import { useSelector , useDispatch } from 'react-redux';
 import { fetchAllCoins } from '../../Redux/allcoins';
 import Loading from '../Loading/Loading';
 
+
 const Home = () => {
  
    const dispatch = useDispatch()
    const {allcoins , loading , error} = useSelector(state=>state.allcoins)
    useEffect(()=>{
        dispatch(fetchAllCoins())
+       document.title = 'Cryptoverse - get details of coins'
    },[])
 
 //LOADING 

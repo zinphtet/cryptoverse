@@ -1,28 +1,45 @@
 import React from 'react'
 import './NewsItem.scss'
-import cryptoimg from '../../cryptonews.jpg'
-import newsLogo from '../../newslogo.jpg'
-const NewsItem = () => {
-  const info = ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus sint aspernatur quas ipsam, veniam rerum.'
+import moment from 'moment'
+import newsLogo from '../../newsdefault.jpg'
+const NewsItem = (props) => {
+ 
+  const {
+    name ,
+    imgUrl,
+    url ,
+    desc ,
+    proName ,
+    proImgUrl ,
+    publishedAt 
+  } = props
+
   return (
+    <a href={url}   target="_blank"
+    rel="noreferrer">
     <div className="news_item">
       <div className="news_title">
         <p className="title">
-           Counterview : Why Crypto currency is a Cardashian ,Not Merly Streep 
+          {name}
         </p>
-        <img src={cryptoimg} alt="news img" />
+        {
+          imgUrl?.thumbnail?.contentUrl &&
+          <img src={imgUrl?.thumbnail?.contentUrl} alt="news img" />
+        }
+       
       </div>
       <p className="news_info">
-        {info.length >100 ? info.slice(0,100) + ' ...' : info}
+        {desc.length >100 ? desc.slice(0,100) + ' ...' : desc}
       </p>
       <div className="news_channel">
          <div className="channel_logo">
-             <img src={newsLogo} alt="news logo " />
-             <p> Department of News</p>
+             <img src={proImgUrl?.thumbnail?.contentUrl || newsLogo} alt="news logo " />
+             <p> {proName}</p>
          </div>
-         <p className="date"> 2 hours ago</p>
+         <p className="date"> {moment(publishedAt).fromNow()}</p>
       </div>
     </div>
+    </a>
   )
 }
 

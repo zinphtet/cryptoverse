@@ -3,23 +3,24 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background-color: var(--white);
     padding: .75rem ;
+    border-radius: .5rem;
     &>*{
         flex: 1;
     }
     .exchange{
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 1rem;
         img{
             width: 3rem;
             height: 3rem;
             border-radius: 50%;
         }
         &_name{
-            font-weight: 500;
+            font-weight: bold;
             // color: var(--main-bg);
             font-size: 1.5rem;
             @media screen and (max-width:37.5rem){
@@ -30,10 +31,10 @@
 }
 
 .exchange_item_info{
-    padding: 1rem 2rem;
+    padding: 2rem;
     background-color: var(--white);
     border-top: .15rem solid #dcd5d5;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     span{
         color: var(--link);
     }

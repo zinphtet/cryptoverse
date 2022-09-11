@@ -1,8 +1,11 @@
 @import '../../base';
+
 .news_item{
     cursor: pointer;
     background-color: var(--white);
     padding: 2rem;
+    color: #000;
+    align-self: stretch;
     @include flexCol(2rem);
     &:hover{
         @include boxShadow;
@@ -11,7 +14,7 @@
         @include flex;
         gap: 1rem;
         .title{
-         font-size: 1.75rem;
+         font-size: 1.5rem;
          font-weight: bold;
         }
         img{

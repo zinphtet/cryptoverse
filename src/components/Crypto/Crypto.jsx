@@ -24,7 +24,9 @@ const Crypto = () => {
     })
     useEffect(()=>{
       dispatch(fetchCoin(id))
-    },[id ])
+
+
+    },[id])
 
   
     if(loading ) return <Loading/>

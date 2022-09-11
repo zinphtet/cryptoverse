@@ -2,33 +2,36 @@
 import React,{useState , useEffect} from 'react'
 import './Currencies.scss'
 import CoinContainer from '../CoinContainer/CoinContainer'
-import { data } from '../../dummydata/dummydata'
+import { useSelector } from 'react-redux'
 const Currencies = () => {
-  const allcoins = data.data.coins
+ 
+  const {allcoins}= useSelector(state=>state.allcoins)
+  const data = allcoins.data.coins
   const [keyword , setKeyword] = useState('')
-  const [myData , setMyData] = useState(allcoins)
-  // const handleFilter = ()=>{
-       
-  // }
+  const [myData , setMyData] = useState(data)
+  
   const handleKeyword = (e)=>{
-    console.log(e.target.value)
      setKeyword(e.target.value)
-    //  console.log(keyword)
+
   }
 
+  useEffect(()=>{
+    document.title = 'Currencies'
+  },[])
+
   useEffect(() => {
-    console.log("from useeffect", keyword)
-    const filter = allcoins.filter((item)=>item.name.toLowerCase().includes(keyword))
-    //  setMyData(filter)
-    // console.log({filter})
+    const filter = data.filter((item)=>item.name.toLowerCase().includes(keyword))
     setMyData(filter)
+
   }, [keyword])
+  
+  
   return (
     <div className='currencies'>
-        {/* <form > */}
+       
            <input className='search_crypto' type="text" placeholder='enter your crypto' onChange={handleKeyword}/>
-        {/* </form> */}
-        <CoinContainer data={myData}/>
+       
+        <CoinContainer data={myData} main={true}/>
     </div>
   )
 }
