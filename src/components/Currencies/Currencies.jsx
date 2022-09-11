@@ -20,7 +20,7 @@ const Currencies = () => {
   },[])
 
   useEffect(() => {
-    const filter = data.filter((item)=>item.name.toLowerCase().includes(keyword))
+    const filter = data.filter((item)=>item.name.toLowerCase().includes(keyword.toLowerCase()))
     setMyData(filter)
 
   }, [keyword])

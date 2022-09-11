@@ -74,7 +74,7 @@ const options = {
         <option value="5y">5y</option>
     </select>
    
-    <Line options={options}  data={data} />
+    <Line options={options} className='line_chart'   data={data} />
   </>
   )
 }
